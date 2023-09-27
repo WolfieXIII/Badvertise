@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Badvertise Me",
+  "version": "0.1",
+  "description": "Collects advertiser links from web pages",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "default_title": "Badvertise Me"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
